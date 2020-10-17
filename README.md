@@ -1,15 +1,31 @@
 # notes
 
+![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
+## Project status
+
+* [x] Specification
+* [] Technical analysis
+* [] Development
+* [] Final unit tests
+* [] Deployment
+
+## Overview
+
 Notes is a web application that allows you to take notes quickly.
 
 The main goal of this project is to replace Google Keep and Microsoft OneNote, and create an unique web application that deal with all features of theses two softwares.
+
+To have a look on the final project, it should look like to [takenote](https://github.com/taniarascia/takenote).
 
 ## Different types of notes
 
 So the application provides the following note types :
 
 * list (with checkboxes)
+  * checked boxes must be above the others list elements
 * text (markdown, links, images, etc...)
+  * a preview is available
 
 ## Organise your notes
 
@@ -30,13 +46,13 @@ Then, if you just don't need anymore a note, you can delete notes.
 
 But if your goal keeps alive a note/notebook, right click on it and "Archive".
 
-So there is two last spaces :
+So there are two last spaces :
 
 * Trash
 * Archives
 
 ## Second version
-
+https://github.com/taniarascia/takenote
 This is a list of propositions of features for the second version of the application :
 
 * progressive web app
