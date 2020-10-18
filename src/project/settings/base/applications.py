@@ -10,6 +10,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Dependencies
     'social_django',
+    # Project applications
+    'core',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
