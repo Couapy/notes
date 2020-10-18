@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     'social_django',
     # Project applications
     'core',
+    'frontend',  # enable the frontend app
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
