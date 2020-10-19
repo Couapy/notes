@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Footer from "./footer/Footer";
 
 class App extends Component {
 	constructor(props) {
@@ -10,14 +12,14 @@ class App extends Component {
 		return (
 			<div>
 				<h1>Hello World!</h1>
-				<h2>Notes is coming...</h2>
+				<Footer className='footer' />
 			</div>
 		);
 	}
 }
 
-// App.propTypes = {
-// 	props: PropTypes.element,
-// };
+App.propTypes = {
+	props: PropTypes.element,
+};
 
 export default App;

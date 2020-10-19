@@ -11,10 +11,16 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
+				resolve: {
+					extensions: [".js", ".jsx"],
+				},
 				use: {
 					loader: "babel-loader",
 				},
 			},
 		],
+	},
+	devServer: {
+		open: "Firefox",
 	},
 };
