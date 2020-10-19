@@ -1,5 +1,5 @@
 import os
-from .constants import APPS_DIR
+from .constants import APPS_DIR, BASE_DIR
 
 INSTALLED_APPS = [
     'django.contrib.admin',
