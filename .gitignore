@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Mac folder
+.DS_Store
+
+# === Front-end folders ===
+# dependencies
+src/apps/frontend/node_modules
+
+# production
+src/apps/frontend/static/frontend
+# ==========================

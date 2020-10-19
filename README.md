@@ -5,10 +5,10 @@
 ## Project status
 
 * [x] Specification
-* [] Technical analysis
-* [] Development
-* [] Final unit tests
-* [] Deployment
+* [ ] Technical analysis
+* [ ] Development
+* [ ] Final unit tests
+* [ ] Deployment
 
 ## Overview
 
