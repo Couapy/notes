@@ -4,6 +4,8 @@ all:
 install:
 	@echo "Silent mode enable. Installation in progress ..."
 
+	npm install --prefix src/apps/frontend
+
 	@virtualenv .venv
 	@echo "Virtual environnement '.venv' is enabled"
 
@@ -22,19 +24,27 @@ install:
 	@echo "Installation finished."
 
 update:
-	@git pull
 	@.venv/bin/python src/manage.py migrate
 
+install_packages:
+	npm install --prefix src/apps/frontend
+
 run:
+	@.venv/bin/python src/manage.py runserver
+
+build_run:
+	npm run --prefix src/apps/frontend build
 	@.venv/bin/python src/manage.py runserver
 
 clean:
 	@rm -rf .venv var
 
 help:
-	@echo "This is the help, the following commands are availables :"
+	@echo "This is the help, the following commands are availables:"
 	@echo "    install - Install the project"
 	@echo "    update - Update the project"
+	@echo "    install_packages - Install/Update node_modules"
 	@echo "    run - Run development server"
+	@echo "    build_run - Build React render & Run development server"
 	@echo "    clean - Clean the project (virtualenv and var folders)"
 	@echo "    help - Show this help"

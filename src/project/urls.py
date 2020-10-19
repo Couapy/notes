@@ -6,14 +6,13 @@ from django.urls import include, path
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', include('frontend.urls')),
     path('', include('core.urls', namespace='core')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include("social_django.urls", namespace="social")),
 ] + static(
-    settings.STATIC_URL,
-    document_root=settings.STATIC_ROOT
+settings.STATIC_URL,
+    document_root = settings.STATIC_ROOT
 ) + static(
-    settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT
+settings.MEDIA_URL,
+    document_root = settings.MEDIA_ROOT
 )
