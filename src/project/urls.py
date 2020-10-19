@@ -9,4 +9,10 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include("social_django.urls", namespace="social")),
-]
+] + static(
+settings.STATIC_URL,
+    document_root = settings.STATIC_ROOT
+) + static(
+settings.MEDIA_URL,
+    document_root = settings.MEDIA_ROOT
+)

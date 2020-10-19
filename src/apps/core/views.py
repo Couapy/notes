@@ -10,7 +10,7 @@ import os
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'build/index.html', {})
 
 
 class FrontendAppView(View):
