@@ -39,6 +39,9 @@ build_run:
 clean:
 	@rm -rf .venv var
 
+front_start_firefox:
+	npm run --prefix src/apps/frontend start-firefox
+
 help:
 	@echo "This is the help, the following commands are availables:"
 	@echo "    install - Install the project"
