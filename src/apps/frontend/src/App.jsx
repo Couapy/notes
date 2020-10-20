@@ -1,11 +1,11 @@
+//@flow
 import React from "react";
-import Proptypes from "prop-types";
 // import axios from "axios";
 import "./App.css";
 
 import Footer from "./components/Footer";
 
-const App = () => {
+const App = (): React$Element<"div"> => {
 	return (
 		<div className='App'>
 			<header className='App-header'>
@@ -14,10 +14,6 @@ const App = () => {
 			<Footer />
 		</div>
 	);
-};
-
-App.propTypes = {
-	props: Proptypes.object,
 };
 
 export default App;

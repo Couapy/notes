@@ -11,3 +11,8 @@
 ## React & Django
 
 [Building React and Django Web Application and Deploy It on Google Cloud](https://medium.com/@zackliutju/building-react-and-django-web-application-and-deploy-it-on-google-cloud-545f06eb5521)
+
+## Types-checking
+
+[Why use static types in JavaScript?](https://medium.com/free-code-camp/why-use-static-types-in-javascript-part-1-8382da1e0adb)
+[Flow types checking in React](https://flow.org/en/docs/react/)

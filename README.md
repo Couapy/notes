@@ -4,11 +4,11 @@
 
 ## Project status
 
-* [x] Specification
-* [ ] Technical analysis
-* [ ] Development
-* [ ] Final unit tests
-* [ ] Deployment
+- [x] Specification
+- [ ] Technical analysis
+- [ ] Development
+- [ ] Final unit tests
+- [ ] Deployment
 
 ## Overview
 
@@ -22,10 +22,10 @@ To have a look on the final project, it should look like to [takenote](https://g
 
 So the application provides the following note types :
 
-* list (with checkboxes)
-  * checked boxes must be above the others list elements
-* text (markdown, links, images, etc...)
-  * a preview is available
+- list (with checkboxes)
+  - checked boxes must be above the others list elements
+- text (markdown, links, images, etc...)
+  - a preview is available
 
 ## Organise your notes
 
@@ -48,17 +48,17 @@ But if your goal keeps alive a note/notebook, right click on it and "Archive".
 
 So there are two last spaces :
 
-* Trash
-* Archives
+- Trash
+- Archives
 
 ## Second version
-https://github.com/taniarascia/takenote
+
 This is a list of propositions of features for the second version of the application :
 
-* progressive web app
-* offline version
-* extends textual notes with drawing =)
+- progressive web app
+- offline version
+- extends textual notes with drawing =)
 
 ## License
 
-The project license is available here : [LICENSE](https://github.com/Couapy/notes/blob/master/LICENSE)
+The project license is available here : [LICENSE](https://github.com/Couapy/notes/blob/master/LICENSE).
