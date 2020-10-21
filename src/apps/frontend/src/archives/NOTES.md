@@ -9,7 +9,7 @@
     - [Icons](#icons)
     - [Drag 'n Drop](#drag-n-drop)
     - [Login](#login)
-  - [Various](#various)
+  - [_Various_](#various)
     - [git](#git)
     - [npm](#npm)
 
@@ -21,7 +21,8 @@
 
 [Why use static types in JavaScript?](https://medium.com/free-code-camp/why-use-static-types-in-javascript-part-1-8382da1e0adb)  
 [Flow types checking in React](https://flow.org/en/docs/react/)  
-[Static Type Checking from reactjs.org](https://reactjs.org/docs/static-type-checking.html)
+[Static Type Checking from reactjs.org](https://reactjs.org/docs/static-type-checking.html)  
+[Typing React Components with Flow](https://datarockets.com/blog/react-components-flow-tutorial/)
 
 ## React addons
 
@@ -47,7 +48,7 @@
 
 [react-google-login](https://github.com/anthonyjgrove/react-google-login)
 
-## Various
+## _Various_
 
 ### git
 
