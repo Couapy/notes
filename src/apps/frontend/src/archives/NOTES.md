@@ -34,7 +34,15 @@
 
 [react-outside-click-handler](https://github.com/airbnb/react-outside-click-handler)  
 [react-sidebar](https://github.com/balloob/react-sidebar#readme)  
-[perfect-scrollbar](https://github.com/mdbootstrap/perfect-scrollbar)
+[perfect-scrollbar](https://github.com/mdbootstrap/perfect-scrollbar)  
+[react-shortcuts](https://github.com/avocode/react-shortcuts#readme)  
+[react-virtualized](https://github.com/bvaughn/react-virtualized)  
+[react-transition-group](https://github.com/reactjs/react-transition-group)  
+[react-touch](https://github.com/leonaves/react-touch)  
+[react-textarea-autosize](https://github.com/Andarist/react-textarea-autosize)  
+[react-swipeable](https://github.com/FormidableLabs/react-swipeable)  
+[react-svg](https://github.com/tanem/react-svg)  
+[react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
 
 ### Icons
 

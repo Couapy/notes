@@ -15,7 +15,9 @@
 
 [lints]
 all=warn
+
 [options]
 emoji=true
 include_warnings=true
+
 [strict]

@@ -4,7 +4,7 @@ all:
 install:
 	@echo "Silent mode enable. Installation in progress ..."
 
-	npm install --prefix src/apps/frontend
+	yarn --cwd src/apps/frontend
 
 	@virtualenv .venv
 	@echo "Virtual environnement '.venv' is enabled"
@@ -27,20 +27,20 @@ update:
 	@.venv/bin/python src/manage.py migrate
 
 install_packages:
-	npm install --prefix src/apps/frontend
+	yarn --cwd src/apps/frontend
 
 run:
 	@.venv/bin/python src/manage.py runserver
 
 build_run:
-	npm run --prefix src/apps/frontend build
+	yarn --cwd src/apps/frontend build
 	@.venv/bin/python src/manage.py runserver
 
 clean:
 	@rm -rf .venv var
 
 front_start_firefox:
-	npm run --prefix src/apps/frontend start-firefox
+	yarn --cwd src/apps/frontend start-firefox
 
 help:
 	@echo "This is the help, the following commands are availables:"
