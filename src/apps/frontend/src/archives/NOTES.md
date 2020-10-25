@@ -29,7 +29,7 @@
 
 ### UI
 
-[Material Design for Bootstrap (React version)](https://mdbootstrap.com/docs/react/), [Demo App](https://react.mdbootstrap.com/)  
+[React-Bootstrap](https://react-bootstrap.github.io)  
 [timeago.js](https://timeago.org/)
 
 ### UX

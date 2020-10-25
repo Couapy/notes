@@ -1,15 +1,16 @@
 //@flow
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Content from "./components/Content";
 
 const App = (): React$Element<"div"> => {
 	return (
 		<div className='App'>
-			<header className='App-header'>
-				<h1>Hello World!</h1>
-			</header>
+			<Header />
+			<Content />
 			<Footer />
 		</div>
 	);

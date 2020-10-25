@@ -3,8 +3,17 @@ import React, { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const Footer = (props: ?{}): React$Element<"footer"> => {
+	return (
+		<footer className='App-footer'>
+			<p>Notes is coming... SOON!!!</p>
+			<FullDate />
+		</footer>
+	);
+};
+
+function FullDate() {
 	const [time, setTime] = useState(new Date());
-	const [locate, setLocate] = useState("en");
+	const [locate, setLocate] = useState("en-US");
 	const formatDateTimeFormat = (locate: string): Intl$DateTimeFormat =>
 		new Intl.DateTimeFormat(locate, {
 			timeStyle: "medium",
@@ -21,7 +30,7 @@ const Footer = (props: ?{}): React$Element<"footer"> => {
 	const [fullDate, setFullDate] = useState(formatFullDate(time));
 
 	const handleSwitchLocate = (): void => {
-		locate === "en" ? setLocate("fr") : setLocate("en");
+		locate === "en-US" ? setLocate("fr-FR") : setLocate("en-US");
 	};
 
 	useEffect(() => {
@@ -37,24 +46,23 @@ const Footer = (props: ?{}): React$Element<"footer"> => {
 	}, [locate, time]);
 
 	return (
-		<footer className='App-footer'>
-			<p>Notes is coming... SOON!!!</p>
-			<OverlayTrigger
-				placement='auto'
-				delay={750}
-				overlay={
-					<Tooltip id='footer-time-tooltip'>
-						Click to switch locate format
-						<br />
-						<em>'en'</em> &#x21CB; <em>'fr'</em>
-					</Tooltip>
-				}>
-				<p onClick={handleSwitchLocate} style={{ cursor: "pointer" }}>
-					{fullDate}
-				</p>
-			</OverlayTrigger>
-		</footer>
+		<OverlayTrigger
+			placement='auto'
+			delay={{ show: 1000, hide: 100 }}
+			overlay={
+				<Tooltip id='footer-time-tooltip'>
+					{locate !== "en-US"
+						? "Click to switch locate format"
+						: "Cliquer pour changer le format local"}
+					<br />
+					<em>'en'</em> &#x21CB; <em>'fr'</em>
+				</Tooltip>
+			}>
+			<p onClick={handleSwitchLocate} style={{ cursor: "pointer" }}>
+				{fullDate}
+			</p>
+		</OverlayTrigger>
 	);
-};
+}
 
 export default Footer;
