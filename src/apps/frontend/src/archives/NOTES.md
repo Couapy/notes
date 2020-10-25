@@ -22,13 +22,15 @@
 [Why use static types in JavaScript?](https://medium.com/free-code-camp/why-use-static-types-in-javascript-part-1-8382da1e0adb)  
 [Flow types checking in React](https://flow.org/en/docs/react/)  
 [Static Type Checking from reactjs.org](https://reactjs.org/docs/static-type-checking.html)  
-[Typing React Components with Flow](https://datarockets.com/blog/react-components-flow-tutorial/)
+[Typing React Components with Flow](https://datarockets.com/blog/react-components-flow-tutorial/)  
+[Flow error `cannot resolve module`](https://stackoverflow.com/questions/51563112/flow-throws-error-cannot-resolve-module-react-redux-even-tho-its-installed#51793867): `yarn flow-typed install --overwrite`
 
 ## React addons
 
 ### UI
 
-[Material Design for Bootstrap (React version)](https://mdbootstrap.com/docs/react/), [Demo App](https://react.mdbootstrap.com/)
+[Material Design for Bootstrap (React version)](https://mdbootstrap.com/docs/react/), [Demo App](https://react.mdbootstrap.com/)  
+[timeago.js](https://timeago.org/)
 
 ### UX
 

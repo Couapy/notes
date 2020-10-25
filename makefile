@@ -36,7 +36,7 @@ run:
 
 build_run:
 	yarn --cwd src/apps/frontend build
-	# npm --prefix src/apps/frontend build
+	# npm run --prefix src/apps/frontend build
 	@.venv/bin/python src/manage.py runserver
 
 clean:
@@ -44,7 +44,7 @@ clean:
 
 front_start_firefox:
 	yarn --cwd src/apps/frontend start-firefox
-	# npm --prefix src/apps/frontend start-firefox
+	# npm run --prefix src/apps/frontend start-firefox
 
 help:
 	@echo "This is the help, the following commands are availables:"
