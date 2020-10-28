@@ -1,7 +1,6 @@
-@import "node_modules/nord/src/sass/nord.scss";
+@use "sass:map";
+@import "styles/nord";
 
-$body-bg: $nord6;
-$body-color: $nord1;
 $theme-colors: (
 	"primary": $nord8,
 	"secondary": $nord9,
@@ -11,11 +10,38 @@ $theme-colors: (
 	"info": $nord7,
 	"light": $nord6,
 	"dark": $nord1,
+	"nord0": $nord0,
+	"nord1": $nord1,
+	"nord2": $nord2,
+	"nord3": $nord3,
+	"nord4": $nord4,
+	"nord5": $nord5,
+	"nord6": $nord6,
+	"nord7": $nord7,
+	"nord8": $nord8,
+	"nord9": $nord9,
+	"nord10": $nord10,
+	"nord11": $nord11,
+	"nord12": $nord12,
+	"nord13": $nord13,
+	"nord14": $nord14,
+	"nord15": $nord15,
 );
+
+:root {
+	@each $name, $value in $theme-colors {
+		--color-#{$name}: #{map.get($theme-colors, #{$name})};
+	}
+}
+
+body {
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
 
 .App-header {
 	text-align: center;
-	background-color: $nord0;
+	background-color: var(--color-nord0);
 	min-height: 10vh;
 	display: flex;
 	flex-direction: column;
@@ -36,7 +62,7 @@ $theme-colors: (
 
 .App-footer {
 	text-align: center;
-	background-color: $nord7;
+	background-color: var(--color-nord7);
 	padding-top: 1rem;
 	position: fixed;
 	bottom: 2rem;
@@ -44,5 +70,3 @@ $theme-colors: (
 	border-radius: 1rem;
 	margin-left: 10%;
 }
-
-@import "node_modules/bootstrap/scss/bootstrap";

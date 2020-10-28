@@ -1,6 +1,5 @@
 //@flow
 import React, { useEffect, useState } from "react";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const Footer = (props: ?{}): React$Element<"footer"> => {
 	return (
@@ -46,22 +45,23 @@ function FullDate() {
 	}, [locate, time]);
 
 	return (
-		<OverlayTrigger
-			placement='auto'
-			delay={{ show: 1000, hide: 100 }}
-			overlay={
-				<Tooltip id='footer-time-tooltip'>
-					{locate !== "en-US"
-						? "Click to switch locate format"
-						: "Cliquer pour changer le format local"}
-					<br />
-					<em>'en'</em> &#x21CB; <em>'fr'</em>
-				</Tooltip>
-			}>
+		<div
+		// placement='auto'
+		// delay={{ show: 1000, hide: 100 }}
+		// overlay={
+		// 	<Tooltip id='footer-time-tooltip'>
+		// 		{locate !== "en-US"
+		// 			? "Click to switch locate format"
+		// 			: "Cliquer pour changer le format local"}
+		// 		<br />
+		// 		<em>'en'</em> &#x21CB; <em>'fr'</em>
+		// 	</Tooltip>
+		// }
+		>
 			<p onClick={handleSwitchLocate} style={{ cursor: "pointer" }}>
 				{fullDate}
 			</p>
-		</OverlayTrigger>
+		</div>
 	);
 }
 

@@ -29,7 +29,6 @@
 
 ### UI
 
-[React-Bootstrap](https://react-bootstrap.github.io)  
 [timeago.js](https://timeago.org/)
 
 ### UX

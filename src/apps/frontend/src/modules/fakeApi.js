@@ -1,4 +1,7 @@
 //@flow
+
+const delay = 5000;
+
 export const fetchData = (): ({
 	user: {
 		read: () => void | { string: string, ... },
@@ -46,6 +49,6 @@ const fetchUser = () => {
 			resolve({
 				string: "... and we are working good!!!",
 			});
-		}, 5000);
+		}, delay);
 	});
 };

@@ -1,6 +1,6 @@
 //@flow
 import React, { Suspense, useState, useEffect } from "react";
-import { Spinner } from "react-bootstrap";
+import Spinner from "./Spinner/Spinner";
 import { fetchData } from "../modules/fakeApi";
 
 const resource = fetchData();
@@ -22,7 +22,7 @@ const Content = (): React$Element<"div"> => {
 		"warning",
 		"info",
 		"dark",
-	];
+	].map((val) => `--color-${val}`);
 	const [nbVar, setNbVar] = useState(0);
 	const [variant, setVariant] = useState(variants[nbVar]);
 
@@ -43,7 +43,7 @@ const Content = (): React$Element<"div"> => {
 			<div>We are still working on it...</div>
 			<Suspense
 				fallback={
-					<Spinner animation='border' role='status' variant={variant}>
+					<Spinner variant={variant}>
 						<span className='sr-only'>Loading...</span>
 					</Spinner>
 				}>
