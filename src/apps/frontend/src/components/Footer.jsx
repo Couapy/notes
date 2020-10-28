@@ -1,5 +1,6 @@
 //@flow
 import React, { useEffect, useState } from "react";
+import Tooltip from "../components/Tooltip/Tooltip";
 
 const Footer = (props: ?{}): React$Element<"footer"> => {
 	return (
@@ -10,7 +11,7 @@ const Footer = (props: ?{}): React$Element<"footer"> => {
 	);
 };
 
-function FullDate() {
+const FullDate = (): React$Element<"div"> => {
 	const [time, setTime] = useState(new Date());
 	const [locate, setLocate] = useState("en-US");
 	const formatDateTimeFormat = (locate: string): Intl$DateTimeFormat =>
@@ -45,24 +46,21 @@ function FullDate() {
 	}, [locate, time]);
 
 	return (
-		<div
-		// placement='auto'
-		// delay={{ show: 1000, hide: 100 }}
-		// overlay={
-		// 	<Tooltip id='footer-time-tooltip'>
-		// 		{locate !== "en-US"
-		// 			? "Click to switch locate format"
-		// 			: "Cliquer pour changer le format local"}
-		// 		<br />
-		// 		<em>'en'</em> &#x21CB; <em>'fr'</em>
-		// 	</Tooltip>
-		// }
-		>
+		<Tooltip
+			overlay={
+				<span className='bg-dark txt-light'>
+					{locate !== "en-US"
+						? "Click to switch locate format"
+						: "Cliquer pour changer le format local"}
+					<br />
+					<em>'en'</em> &#x21CB; <em>'fr'</em>
+				</span>
+			}>
 			<p onClick={handleSwitchLocate} style={{ cursor: "pointer" }}>
 				{fullDate}
 			</p>
-		</div>
+		</Tooltip>
 	);
-}
+};
 
 export default Footer;

@@ -1,0 +1,181 @@
+@use "sass:map";
+@import "styles/nord";
+
+$theme-colors: (
+	"primary": $nord8,
+	"secondary": $nord9,
+	"success": $nord14,
+	"danger": $nord11,
+	"warning": $nord13,
+	"info": $nord7,
+	"light": $nord6,
+	"dark": $nord1,
+	"nord0": $nord0,
+	"nord1": $nord1,
+	"nord2": $nord2,
+	"nord3": $nord3,
+	"nord4": $nord4,
+	"nord5": $nord5,
+	"nord6": $nord6,
+	"nord7": $nord7,
+	"nord8": $nord8,
+	"nord9": $nord9,
+	"nord10": $nord10,
+	"nord11": $nord11,
+	"nord12": $nord12,
+	"nord13": $nord13,
+	"nord14": $nord14,
+	"nord15": $nord15,
+);
+
+:root {
+	@each $name, $value in $theme-colors {
+		--color-#{$name}: #{map.get($theme-colors, #{$name})};
+	}
+}
+
+.bg-primary {
+	background-color: #{map.get($theme-colors, "primary")} !important;
+}
+.bg-secondary {
+	background-color: #{map.get($theme-colors, "secondary")} !important;
+}
+.bg-success {
+	background-color: #{map.get($theme-colors, "success")} !important;
+}
+.bg-danger {
+	background-color: #{map.get($theme-colors, "danger")} !important;
+}
+.bg-warning {
+	background-color: #{map.get($theme-colors, "warning")} !important;
+}
+.bg-info {
+	background-color: #{map.get($theme-colors, "info")} !important;
+}
+.bg-light {
+	background-color: #{map.get($theme-colors, "light")} !important;
+}
+.bg-dark {
+	background-color: #{map.get($theme-colors, "dark")} !important;
+}
+.bg-nord0 {
+	background-color: #{map.get($theme-colors, "nord0")} !important;
+}
+.bg-nord1 {
+	background-color: #{map.get($theme-colors, "nord1")} !important;
+}
+.bg-nord2 {
+	background-color: #{map.get($theme-colors, "nord2")} !important;
+}
+.bg-nord3 {
+	background-color: #{map.get($theme-colors, "nord3")} !important;
+}
+.bg-nord4 {
+	background-color: #{map.get($theme-colors, "nord4")} !important;
+}
+.bg-nord5 {
+	background-color: #{map.get($theme-colors, "nord5")} !important;
+}
+.bg-nord6 {
+	background-color: #{map.get($theme-colors, "nord6")} !important;
+}
+.bg-nord7 {
+	background-color: #{map.get($theme-colors, "nord7")} !important;
+}
+.bg-nord8 {
+	background-color: #{map.get($theme-colors, "nord8")} !important;
+}
+.bg-nord9 {
+	background-color: #{map.get($theme-colors, "nord9")} !important;
+}
+.bg-nord10 {
+	background-color: #{map.get($theme-colors, "nord10")} !important;
+}
+.bg-nord11 {
+	background-color: #{map.get($theme-colors, "nord11")} !important;
+}
+.bg-nord12 {
+	background-color: #{map.get($theme-colors, "nord12")} !important;
+}
+.bg-nord13 {
+	background-color: #{map.get($theme-colors, "nord13")} !important;
+}
+.bg-nord14 {
+	background-color: #{map.get($theme-colors, "nord14")} !important;
+}
+.bg-nord15 {
+	background-color: #{map.get($theme-colors, "nord15")} !important;
+}
+
+.txt-primary {
+	color: #{map.get($theme-colors, "primary")} !important;
+}
+.txt-secondary {
+	color: #{map.get($theme-colors, "secondary")} !important;
+}
+.txt-success {
+	color: #{map.get($theme-colors, "success")} !important;
+}
+.txt-danger {
+	color: #{map.get($theme-colors, "danger")} !important;
+}
+.txt-warning {
+	color: #{map.get($theme-colors, "warning")} !important;
+}
+.txt-info {
+	color: #{map.get($theme-colors, "info")} !important;
+}
+.txt-light {
+	color: #{map.get($theme-colors, "light")} !important;
+}
+.txt-dark {
+	color: #{map.get($theme-colors, "dark")} !important;
+}
+.txt-nord0 {
+	background-color: #{map.get($theme-colors, "nord0")} !important;
+}
+.txt-nord1 {
+	background-color: #{map.get($theme-colors, "nord1")} !important;
+}
+.txt-nord2 {
+	background-color: #{map.get($theme-colors, "nord2")} !important;
+}
+.txt-nord3 {
+	background-color: #{map.get($theme-colors, "nord3")} !important;
+}
+.txt-nord4 {
+	background-color: #{map.get($theme-colors, "nord4")} !important;
+}
+.txt-nord5 {
+	background-color: #{map.get($theme-colors, "nord5")} !important;
+}
+.txt-nord6 {
+	background-color: #{map.get($theme-colors, "nord6")} !important;
+}
+.txt-nord7 {
+	background-color: #{map.get($theme-colors, "nord7")} !important;
+}
+.txt-nord8 {
+	background-color: #{map.get($theme-colors, "nord8")} !important;
+}
+.txt-nord9 {
+	background-color: #{map.get($theme-colors, "nord9")} !important;
+}
+.txt-nord10 {
+	background-color: #{map.get($theme-colors, "nord10")} !important;
+}
+.txt-nord11 {
+	background-color: #{map.get($theme-colors, "nord11")} !important;
+}
+.txt-nord12 {
+	background-color: #{map.get($theme-colors, "nord12")} !important;
+}
+.txt-nord13 {
+	background-color: #{map.get($theme-colors, "nord13")} !important;
+}
+.txt-nord14 {
+	background-color: #{map.get($theme-colors, "nord14")} !important;
+}
+.txt-nord15 {
+	background-color: #{map.get($theme-colors, "nord15")} !important;
+}
