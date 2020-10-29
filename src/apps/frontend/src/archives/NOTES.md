@@ -12,6 +12,7 @@
   - [_Various_](#various)
     - [git](#git)
     - [npm](#npm)
+    - [Code snippets](#code-snippets)
 
 ## React & Django
 
@@ -66,3 +67,7 @@
 ### npm
 
 [How can I get npm start at a different directory?](https://stackoverflow.com/questions/36172442/how-can-i-get-npm-start-at-a-different-directory)
+
+### Code snippets
+
+[W3Schools How To](https://www.w3schools.com/howto/default.asp)
