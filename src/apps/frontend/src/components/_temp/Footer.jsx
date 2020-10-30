@@ -1,6 +1,6 @@
 //@flow
 import React, { useEffect, useState } from "react";
-import Tooltip from "../components/Tooltip/Tooltip";
+import Tooltip from "../Tooltip/Tooltip";
 
 const Footer = (props: ?{}): React$Element<"footer"> => {
 	return (

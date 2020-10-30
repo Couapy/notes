@@ -1,7 +1,7 @@
 //@flow
 import React, { Suspense, useState, useEffect } from "react";
-import Spinner from "./Spinner/Spinner";
-import { fetchData } from "../modules/fakeApi";
+import Spinner from "../Spinner/Spinner";
+import { fetchData } from "../../modules/fakeApi";
 
 const resource = fetchData();
 

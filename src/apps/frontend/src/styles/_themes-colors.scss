@@ -10,6 +10,7 @@ $theme-colors: (
 	"info": $nord7,
 	"light": $nord6,
 	"dark": $nord1,
+	"dark2": $nord0,
 	"nord0": $nord0,
 	"nord1": $nord1,
 	"nord2": $nord2,
@@ -31,6 +32,7 @@ $theme-colors: (
 $targets-colors: (
 	"bg": "background-color",
 	"txt": "color",
+	"svg": "fill",
 );
 
 :root {
@@ -43,6 +45,11 @@ $targets-colors: (
 	@each $target, $tg-value in $targets-colors {
 		.#{$target}-#{$name} {
 			#{$tg-value}: $value !important;
+			transition: if($target == "svg", all 0.2s ease-in-out, null);
+			&:hover {
+				opacity: if($target == "svg", 0.75 !important, null);
+				transform: if($target == "svg", scale(1.1), null);
+			}
 		}
 	}
 }

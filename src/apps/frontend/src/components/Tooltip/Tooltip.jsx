@@ -7,6 +7,7 @@ const Tooltip = (props: {
 	children: string | React.Element<"span">,
 	className?: string,
 }): React.Element<"div"> => {
+	const { className, overlay, children, ...otherProps } = props;
 	const bgColor =
 		props.overlay.props.className &&
 		props.overlay.props.className
@@ -29,19 +30,19 @@ const Tooltip = (props: {
 		borderColor: `${colorVar} transparent transparent transparent`,
 	};
 
-	const overlay = {
-		...props.overlay,
+	const overlayText = {
+		...overlay,
 		props: {
-			...props.overlay.props,
-			className: (props.overlay.props.className || "").concat(" tooltiptext"),
+			...overlay.props,
+			className: (overlay.props.className || "").concat(" tooltiptext"),
 		},
 	};
 
 	return (
-		<div {...props} className={(props.className || "").concat(" tooltip")}>
-			{props.children}{" "}
+		<div {...otherProps} className={(className || "").concat(" tooltip")}>
+			{children}{" "}
 			<div>
-				{overlay}
+				{overlayText}
 				<div className='tooltip-arrow' style={arrowStyle} />
 			</div>
 		</div>

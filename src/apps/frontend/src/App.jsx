@@ -2,18 +2,16 @@
 import React from "react";
 import "./App.scss";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Temp from "./components/_temp/Temp";
+import AppStatus from "./components/AppStatus/AppStatus";
 
 const App = (): React$Element<"div"> => {
-	return (
-		<div className='App'>
-			<Header />
-			<Content />
-			<Footer />
-		</div>
-	);
+	const [temp, setTemp] = React.useState(false);
+	React.useEffect(() => {
+		const timer = setTimeout(() => setTemp(true), 10000);
+		return () => clearTimeout(timer);
+	});
+	return <div className='App'>{!temp ? <Temp /> : <AppStatus />}</div>;
 };
 
 export default App;

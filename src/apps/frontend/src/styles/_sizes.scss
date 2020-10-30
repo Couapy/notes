@@ -1,0 +1,42 @@
+@use "sass:string";
+
+$size: (
+	"0px": 0px,
+	"16px": 1rem,
+	"18px": 1.125rem,
+	"20px": 1.25rem,
+	"22px": 1.375rem,
+	"24px": 1.5rem,
+	"26px": 1.625rem,
+	"28px": 1.75rem,
+);
+$cardinals: (
+	"t": "top",
+	"r": "right",
+	"b": "bottom",
+	"l": "left",
+);
+
+@each $name, $value in $size {
+	$name-length: string.length($name);
+	$name-short: string.slice($name, 1, $name-length - 2);
+	.svg-#{$name-short} {
+		width: #{$value};
+		height: #{$value};
+		font-size: #{$value};
+	}
+	.p#{$name-short} {
+		padding: #{$value};
+	}
+	.m#{$name-short} {
+		margin: #{$value};
+	}
+	@each $card, $card-val in $cardinals {
+		.p#{$card}#{$name-short} {
+			padding-#{$card-val}: #{$value};
+		}
+		.m#{$card}#{$name-short} {
+			margin-#{$card-val}: #{$value};
+		}
+	}
+}

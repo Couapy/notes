@@ -6,13 +6,14 @@
 <PROJECT_ROOT>/src/serviceWorker.js
 <PROJECT_ROOT>/src/setupTests.js
 <PROJECT_ROOT>/src/archives/.*
+<PROJECT_ROOT>/src/svg/.*
 
 [include]
 ./src/*.js
 ./src/*.jsx
 
 [libs]
-
+<PROJECT_ROOT>/flow-typed
 [lints]
 all=warn
 
