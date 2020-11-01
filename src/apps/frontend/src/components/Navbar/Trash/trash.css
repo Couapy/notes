@@ -1,0 +1,8 @@
+.trash {
+	width: 100%;
+	grid-area: trash;
+}
+
+.trash .bin {
+	width: fit-content;
+}

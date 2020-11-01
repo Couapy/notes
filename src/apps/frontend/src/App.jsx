@@ -6,6 +6,7 @@ import Temp from "./components/_temp/Temp";
 import AppStatus from "./components/AppStatus/AppStatus";
 import EditorBar from "./components/EditorBar/EditorBar";
 import Navbar from "./components/Navbar/Navbar";
+import Editor from "./components/Editor/Editor";
 
 const App = (): React$Element<"div"> => {
 	const [temp, setTemp] = React.useState(false);
@@ -22,6 +23,7 @@ const App = (): React$Element<"div"> => {
 					<AppStatus />
 					<EditorBar />
 					<Navbar />
+					<Editor />
 				</div>
 			)}
 		</div>

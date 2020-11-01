@@ -1,0 +1,4 @@
+.categories {
+	overflow-y: auto;
+	grid-area: categories;
+}

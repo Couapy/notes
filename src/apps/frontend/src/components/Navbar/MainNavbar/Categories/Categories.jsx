@@ -1,25 +1,34 @@
 //@flow
 import React from "react";
 import noteBooks from "./NoteBooks";
+import "./categories.css";
 
-const items = [noteBooks];
+// const items = [noteBooks];
+const items = Array(8).fill(noteBooks);
 
-const Categories = (): React$Node => {
-	return items.map((item, id) => {
+const Category = (): Array<React$Element<"div">> =>
+	items.map((item, id) => {
 		const ComponentLogo = item.ico;
 		const ComponentChildren = item.componentChildren;
 		return (
-			<>
+			<div className='category'>
 				<div
 					key={item.txt.concat(id.toString())}
-					className='flex-center flex-js-sb height50 pr40 pl40'>
+					className='flex-center flex-jc-sb height50 pr40 pl40 fs22 font-weight-6'>
 					<span>{item.txt}</span>
-					<ComponentLogo className='svg-20 svg-light' />
+					<ComponentLogo className='ico svg-20 svg-light cursor-pointer' />
 				</div>
 				<ComponentChildren />
-			</>
+			</div>
 		);
 	});
+
+const Categories = (): React$Node => {
+	return (
+		<div className='categories'>
+			<Category />
+		</div>
+	);
 };
 
 export default Categories;

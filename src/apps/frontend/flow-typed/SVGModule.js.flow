@@ -21,3 +21,9 @@ declare module "../../../svg/archive.svg" {
 declare module "../../../../svg/plus.svg" {
 	declare module.exports: any;
 }
+declare module "../../svg/bulb.svg" {
+	declare module.exports: any;
+}
+declare module "../../../svg/trash.svg" {
+	declare module.exports: any;
+}

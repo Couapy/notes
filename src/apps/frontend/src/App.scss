@@ -24,12 +24,25 @@ body {
 	border-bottom: 1px solid;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.ico {
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
 .App-container {
 	width: 100vw;
 	height: 100vh;
 	display: grid;
-	grid-template-columns: var(--var-width-bar) auto;
-	grid-template-rows: var(--var-height-bar) auto;
+	grid-template-columns: var(--var-width-bar) calc(100vw - var(--var-width-bar));
+	grid-template-rows: var(--var-height-bar) calc(100vh - var(--var-height-bar));
 	grid-template-areas:
 		"app-status editor-bar"
 		"navbar editor";

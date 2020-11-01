@@ -1,4 +1,5 @@
 .navbar {
+	height: calc(100vh - var(--var-height-bar));
 	grid-area: navbar;
 	display: grid;
 	grid-template-areas: "main-navbar section";

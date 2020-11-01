@@ -1,3 +1,12 @@
 .main-navbar {
+	height: inherit;
+	position: relative;
 	grid-area: main-navbar;
+	display: grid;
+	grid-template-areas: "navbar-actions" "categories" "trash";
+	grid-template-rows: min-content 1fr min-content;
+}
+
+.main-navbar .navbar-actions {
+	grid-area: navbar-actions;
 }

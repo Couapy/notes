@@ -1,7 +1,7 @@
 @use "sass:string";
 
 :root {
-	--var-width-bar: 30rem;
+	--var-width-bar: min(30rem, 100vw);
 	--var-height-bar: 4.375rem;
 }
 
@@ -11,6 +11,13 @@ $cardinals: (
 	"b": "bottom",
 	"l": "left",
 );
+
+@for $i from 1 through 9 {
+	$font-weight: #{$i * 100};
+	.font-weight-#{$i} {
+		font-weight: #{$font-weight};
+	}
+}
 
 @for $i from -20 through 100 {
 	$value: #{$i / 16}rem;
@@ -30,6 +37,12 @@ $cardinals: (
 	}
 	.height#{$i} {
 		height: #{$value};
+	}
+	.fs#{$i} {
+		font-size: #{$value};
+	}
+	.bottom#{$i} {
+		bottom: #{$value};
 	}
 	@each $card, $card-val in $cardinals {
 		.p#{$card}#{$i} {
