@@ -1,15 +1,10 @@
 @use "sass:string";
 
-$size: (
-	"0px": 0px,
-	"16px": 1rem,
-	"18px": 1.125rem,
-	"20px": 1.25rem,
-	"22px": 1.375rem,
-	"24px": 1.5rem,
-	"26px": 1.625rem,
-	"28px": 1.75rem,
-);
+:root {
+	--var-width-bar: 30rem;
+	--var-height-bar: 4.375rem;
+}
+
 $cardinals: (
 	"t": "top",
 	"r": "right",
@@ -17,25 +12,30 @@ $cardinals: (
 	"l": "left",
 );
 
-@each $name, $value in $size {
-	$name-length: string.length($name);
-	$name-short: string.slice($name, 1, $name-length - 2);
-	.svg-#{$name-short} {
+@for $i from -20 through 100 {
+	$value: #{$i / 16}rem;
+	.svg-#{$i} {
 		width: #{$value};
 		height: #{$value};
 		font-size: #{$value};
 	}
-	.p#{$name-short} {
+	.p#{$i} {
 		padding: #{$value};
 	}
-	.m#{$name-short} {
+	.m#{$i} {
 		margin: #{$value};
 	}
+	.width#{$i} {
+		width: #{$value};
+	}
+	.height#{$i} {
+		height: #{$value};
+	}
 	@each $card, $card-val in $cardinals {
-		.p#{$card}#{$name-short} {
+		.p#{$card}#{$i} {
 			padding-#{$card-val}: #{$value};
 		}
-		.m#{$card}#{$name-short} {
+		.m#{$card}#{$i} {
 			margin-#{$card-val}: #{$value};
 		}
 	}

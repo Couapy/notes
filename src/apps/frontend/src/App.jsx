@@ -4,14 +4,28 @@ import "./App.scss";
 
 import Temp from "./components/_temp/Temp";
 import AppStatus from "./components/AppStatus/AppStatus";
+import EditorBar from "./components/EditorBar/EditorBar";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = (): React$Element<"div"> => {
 	const [temp, setTemp] = React.useState(false);
 	React.useEffect(() => {
-		const timer = setTimeout(() => setTemp(true), 10000);
+		const timer = setTimeout(() => setTemp(true), 1000);
 		return () => clearTimeout(timer);
 	});
-	return <div className='App'>{!temp ? <Temp /> : <AppStatus />}</div>;
+	return (
+		<div className='App'>
+			{!temp ? (
+				<Temp />
+			) : (
+				<div className='App-container'>
+					<AppStatus />
+					<EditorBar />
+					<Navbar />
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default App;

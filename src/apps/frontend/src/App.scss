@@ -18,6 +18,20 @@ body {
 	box-sizing: border-box;
 }
 
-.ico {
-	box-sizing: content-box;
+.separator {
+	height: 0px;
+	border-radius: 2px;
+	border-bottom: 1px solid;
+}
+
+.App-container {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: var(--var-width-bar) auto;
+	grid-template-rows: var(--var-height-bar) auto;
+	grid-template-areas:
+		"app-status editor-bar"
+		"navbar editor";
+	justify-items: stretch;
 }

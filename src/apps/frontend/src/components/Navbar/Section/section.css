@@ -1,0 +1,13 @@
+.section {
+	grid-area: section;
+}
+
+.section.closed {
+	opacity: 0;
+	transition: 0.8s opacity linear 0s;
+}
+
+.section.open {
+	opacity: 1;
+	transition: 1.2s opacity linear 0.8s;
+}

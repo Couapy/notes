@@ -6,7 +6,7 @@ import AppStatusActions from "./AppStatusActions";
 
 const AppStatus = (): React.Element<"div"> => {
 	return (
-		<div className='app-status pl24 pr24 flex-center bg-dark2 txt-light'>
+		<div className='app-status pl24 pr24 flex-center flex-js-sb bg-dark2 txt-light'>
 			<AppStatusUser />
 			<AppStatusActions />
 		</div>

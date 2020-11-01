@@ -4,10 +4,21 @@ import "./tooltip.css";
 
 const Tooltip = (props: {
 	overlay: React.Element<"span">,
-	children: string | React.Element<"span">,
 	className?: string,
+	position?: "top" | "right" | "bottom" | "left",
+	children: string | React.Element<"span">,
 }): React.Element<"div"> => {
-	const { className, overlay, children, ...otherProps } = props;
+	const {
+		className,
+		overlay,
+		children,
+		position = "top",
+		...otherProps
+	} = props;
+	const cardinals = ["top", "right", "bottom", "left"];
+	const positionSetted = cardinals.includes(position)
+		? position[0].toUpperCase() + position.slice(1)
+		: "Top";
 	const bgColor =
 		props.overlay.props.className &&
 		props.overlay.props.className
@@ -19,15 +30,7 @@ const Tooltip = (props: {
 		: "#3b4252";
 
 	const arrowStyle = {
-		content: '""',
-		position: "absolute",
-		zIndex: 1,
-		bottom: "calc( 105% - 2 * 0.3125rem )",
-		left: "50%",
-		marginLeft: "-0.3125rem",
-		borderWidth: "0.3125rem",
-		borderStyle: "solid",
-		borderColor: `${colorVar} transparent transparent transparent`,
+		[`border${positionSetted}Color`]: `${colorVar}`,
 	};
 
 	const overlayText = {

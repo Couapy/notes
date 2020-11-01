@@ -9,3 +9,15 @@ declare module "../../svg/update.svg" {
 declare module "../../svg/settings.svg" {
 	declare module.exports: any;
 }
+declare module "../../../svg/plus.svg" {
+	declare module.exports: any;
+}
+declare module "../../../svg/note.svg" {
+	declare module.exports: any;
+}
+declare module "../../../svg/archive.svg" {
+	declare module.exports: any;
+}
+declare module "../../../../svg/plus.svg" {
+	declare module.exports: any;
+}

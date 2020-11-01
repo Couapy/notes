@@ -47,6 +47,7 @@ const FullDate = (): React$Element<"div"> => {
 
 	return (
 		<Tooltip
+			position='top'
 			overlay={
 				<span className='bg-dark txt-light'>
 					{locate !== "en-US"

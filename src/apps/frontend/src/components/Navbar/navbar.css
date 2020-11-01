@@ -1,0 +1,15 @@
+.navbar {
+	grid-area: navbar;
+	display: grid;
+	grid-template-areas: "main-navbar section";
+}
+
+.navbar.section-closed {
+	grid-template-columns: 100% 0;
+	transition: 1.5s;
+}
+
+.navbar.section-open {
+	grid-template-columns: 50% 50%;
+	transition: 1.5s;
+}

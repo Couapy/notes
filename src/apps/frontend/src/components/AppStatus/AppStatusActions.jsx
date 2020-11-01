@@ -5,9 +5,9 @@ import { ReactComponent as SettingsLogo } from "../../svg/settings.svg";
 
 const AppStatusActions = (): React.Element<"span"> => {
 	return (
-		<span className='flex-center mr0'>
-			<UpdateLogo className='ico svg-24 pl20 svg-light' />
-			<SettingsLogo className='ico svg-24 pl20 svg-light' />
+		<span className='flex-center flex-js-sb mr0 width66'>
+			<UpdateLogo className='svg-24 svg-light' />
+			<SettingsLogo className='svg-24 svg-light' />
 		</span>
 	);
 };
