@@ -9,7 +9,11 @@ const Section = (props: { visible: string }): React$Element<"div"> => {
 		setVisible(props.visible);
 	}, [props.visible]);
 
-	return <div className={`section ${visible} bg-nord2 txt-light`}>Section</div>;
+	return (
+		<div className={`section ${visible} bg-nord2 txt-light`}>
+			Section... I will work on it.
+		</div>
+	);
 };
 
 export default Section;

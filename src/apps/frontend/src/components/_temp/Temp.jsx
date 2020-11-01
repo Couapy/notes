@@ -6,11 +6,14 @@ import Content from "./Content";
 
 import "./temp.css";
 
-const Temp = (): React$Node => {
+const Temp = (props: {
+	setTemp: (((boolean) => boolean) | boolean) => void,
+	timerCount: number,
+}): React$Node => {
 	return (
 		<>
-			<Header />
-			<Content />
+			<Header setTemp={props.setTemp} />
+			<Content timerCount={props.timerCount / 1000} />
 			<Footer />
 		</>
 	);

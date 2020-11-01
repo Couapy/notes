@@ -1,15 +1,17 @@
 //@flow
 
-const delay = 5000;
+const defaultDelay = 3000;
 
-export const fetchData = (): ({
+export const fetchData = (
+	delay?: number = defaultDelay
+): ({
 	user: {
 		read: () => void | { string: string, ... },
 		...
 	},
 	...
 }) => {
-	let userPromise = fetchUser();
+	let userPromise = fetchUser(delay);
 	return {
 		user: wrapPromise(userPromise),
 	};
@@ -41,7 +43,7 @@ const wrapPromise = (promise) => {
 	};
 };
 
-const fetchUser = () => {
+const fetchUser = (delay: number) => {
 	console.log("fetch data...");
 	return new Promise((resolve) => {
 		setTimeout(() => {

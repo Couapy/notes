@@ -1,13 +1,16 @@
 //@flow
 import React from "react";
 import { ReactComponent as PlusLogo } from "../../../../svg/plus.svg";
+import "./notebooks.css";
 
 const noteBooksElements = ["Notes project", "Project idea", "To do list"];
 
 const NoteBooks = (): Array<React$Element<"div">> => {
 	return noteBooksElements.map((element, id) => {
 		return (
-			<div className='notebooks pl60 flex-center height36 cursor-pointer'>
+			<div
+				className='notebooks pl60 flex-center height36 cursor-pointer'
+				key={element.toString().concat(id.toString())}>
 				<div className='fs20'>{element}</div>
 			</div>
 		);

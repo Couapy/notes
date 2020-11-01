@@ -2,9 +2,28 @@
 @import "./styles/sizes";
 @import "./styles/flex";
 
+$size-screens: (
+	screen-xxl 1440px 95%,
+	screen-xl 1280px 80%,
+	screen-lg 992px 70%,
+	screen-md 768px 50%,
+	screen-sm 576px 100%
+);
+
+@mixin screen-max($max) {
+	@media (max-width: $max) {
+		@content;
+	}
+}
+
 html {
 	font-size: 100%;
 	box-sizing: border-box;
+	@each $name, $size-screen, $percent in $size-screens {
+		@include screen-max($size-screen) {
+			font-size: $percent;
+		}
+	}
 }
 
 body {

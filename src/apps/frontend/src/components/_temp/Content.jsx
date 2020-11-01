@@ -3,17 +3,31 @@ import React, { Suspense, useState, useEffect } from "react";
 import Spinner from "../Spinner/Spinner";
 import { fetchData } from "../../modules/fakeApi";
 
-const resource = fetchData();
+const delay = 3000;
+const resource = fetchData(delay);
 
 let changeColor = true;
-const timeCol = setTimeout(() => (changeColor = false), 5000);
+const timeCol = setTimeout(() => (changeColor = false), delay);
 
 const ContentLoads = (): React$Element<"div"> => {
 	const data = resource.user.read();
 	return <div>{data?.string}</div>;
 };
 
-const Content = (): React$Element<"div"> => {
+const TimerCount = (props: { timerCount: number }): React$Element<"div"> => {
+	const [timerCount, setTimerCount] = useState(props.timerCount);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setTimerCount(timerCount - 1);
+		}, 1000);
+		return () => clearTimeout(timer);
+	}),
+		[];
+	return <div style={{ fontSize: "3rem" }}>{timerCount.toString()}</div>;
+};
+
+const SuspenseComponent = (): React$Element<"div"> => {
 	const variants = [
 		"primary",
 		"secondary",
@@ -28,6 +42,7 @@ const Content = (): React$Element<"div"> => {
 
 	useEffect(() => {
 		const tpNbVar = (nbVar + 1) % variants.length;
+		console.log("👨‍💻: tpNbVar", tpNbVar);
 		if (changeColor) {
 			const timer = setTimeout(() => setNbVar(tpNbVar), 250);
 			return () => clearTimeout(timer);
@@ -39,8 +54,7 @@ const Content = (): React$Element<"div"> => {
 	}, [nbVar]);
 
 	return (
-		<div className='App-content'>
-			<div>We are still working on it...</div>
+		<div className='height30'>
 			<Suspense
 				fallback={
 					<Spinner variant={variant}>
@@ -49,6 +63,16 @@ const Content = (): React$Element<"div"> => {
 				}>
 				<ContentLoads />
 			</Suspense>
+		</div>
+	);
+};
+
+const Content = (props: { timerCount: number }): React$Element<"div"> => {
+	return (
+		<div className='App-content'>
+			<div className='height30'>We are still working on it...</div>
+			<SuspenseComponent />
+			<TimerCount className='' timerCount={props.timerCount} />
 		</div>
 	);
 };

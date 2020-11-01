@@ -10,6 +10,10 @@
 	color: var(--color-light);
 }
 
+.App-header h1 {
+	cursor: pointer;
+}
+
 .App-content {
 	text-align: center;
 	min-height: 100vh;

@@ -10,14 +10,15 @@ import Editor from "./components/Editor/Editor";
 
 const App = (): React$Element<"div"> => {
 	const [temp, setTemp] = React.useState(false);
+	const timerCount = 10000;
 	React.useEffect(() => {
-		const timer = setTimeout(() => setTemp(true), 1000);
+		const timer = setTimeout(() => setTemp(true), timerCount);
 		return () => clearTimeout(timer);
 	});
 	return (
 		<div className='App'>
 			{!temp ? (
-				<Temp />
+				<Temp setTemp={setTemp} timerCount={timerCount} />
 			) : (
 				<div className='App-container'>
 					<AppStatus />
