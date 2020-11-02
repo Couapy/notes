@@ -3,6 +3,7 @@
 	grid-area: navbar;
 	display: grid;
 	grid-template-areas: "main-navbar section";
+	overflow: hidden;
 }
 
 .navbar.section-closed {

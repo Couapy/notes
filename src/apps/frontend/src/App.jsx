@@ -24,7 +24,7 @@ const App = (): React$Element<"div"> => {
 					<AppStatus />
 					<EditorBar />
 					<Navbar />
-					<Editor />
+					<Editor></Editor>
 				</div>
 			)}
 		</div>

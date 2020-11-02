@@ -39,8 +39,10 @@ body {
 
 .separator {
 	height: 0px;
-	border-radius: 2px;
-	border-bottom: 1px solid;
+	border: {
+		radius: 2px;
+		bottom: 1px solid;
+	}
 }
 
 .cursor-pointer {
@@ -52,18 +54,20 @@ body {
 }
 
 .ico {
-	flex-shrink: 0;
-	flex-grow: 0;
+	flex: {
+		shrink: 0;
+		grow: 0;
+	}
 }
 
 .App-container {
 	width: 100vw;
 	height: 100vh;
 	display: grid;
-	grid-template-columns: var(--var-width-bar) calc(100vw - var(--var-width-bar));
-	grid-template-rows: var(--var-height-bar) calc(100vh - var(--var-height-bar));
-	grid-template-areas:
-		"app-status editor-bar"
-		"navbar editor";
+	grid: {
+		template-columns: var(--var-width-bar) calc(100vw - var(--var-width-bar));
+		template-rows: var(--var-height-bar) calc(100vh - var(--var-height-bar));
+		template-areas: "app-status editor-bar" "navbar editor";
+	}
 	justify-items: stretch;
 }

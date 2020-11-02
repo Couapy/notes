@@ -42,7 +42,6 @@ const SuspenseComponent = (): React$Element<"div"> => {
 
 	useEffect(() => {
 		const tpNbVar = (nbVar + 1) % variants.length;
-		console.log("👨‍💻: tpNbVar", tpNbVar);
 		if (changeColor) {
 			const timer = setTimeout(() => setNbVar(tpNbVar), 250);
 			return () => clearTimeout(timer);

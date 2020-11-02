@@ -3,9 +3,9 @@ import React from "react";
 import { ReactComponent as BulbLogo } from "../../svg/bulb.svg";
 import "./editor.css";
 
-const Editor = (): React$Element<"div"> => {
+const DefaultEditor = (): React$Element<"div"> => {
 	return (
-		<div className='editor flex-center flex-jc-c'>
+		<div className='default-editor flex-center flex-jc-c'>
 			<BulbLogo className='ico svg-24 svg-dark' />
 			<span>
 				<span className='underline'>Pro tip:</span> You can organise your notes
@@ -13,6 +13,13 @@ const Editor = (): React$Element<"div"> => {
 			</span>
 		</div>
 	);
+};
+const Editor = (props: { children?: React$Node }): React$Element<"div"> => {
+	return <div className='editor'>{props.children}</div>;
+};
+
+Editor.defaultProps = {
+	children: (DefaultEditor(): React$Element<"div">),
 };
 
 export default Editor;

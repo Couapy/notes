@@ -1,5 +1,6 @@
 .section {
 	grid-area: section;
+	width: calc(var(--var-width-bar) / 2);
 }
 
 .section.closed {

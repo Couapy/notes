@@ -2,7 +2,10 @@
 import React, { useEffect, useState } from "react";
 import "./section.css";
 
-const Section = (props: { visible: string }): React$Element<"div"> => {
+const Section = (props: {
+	visible: string,
+	children?: React$Node,
+}): React$Element<"div"> => {
 	const [visible, setVisible] = useState(props.visible);
 
 	useEffect(() => {
@@ -11,9 +14,13 @@ const Section = (props: { visible: string }): React$Element<"div"> => {
 
 	return (
 		<div className={`section ${visible} bg-nord2 txt-light`}>
-			Section... I will work on it.
+			{props.children}
 		</div>
 	);
+};
+
+Section.defaultProps = {
+	children: (<div>Section is coming</div>: React$Element<"div">),
 };
 
 export default Section;
