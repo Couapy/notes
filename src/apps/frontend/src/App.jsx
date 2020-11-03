@@ -8,6 +8,8 @@ import EditorBar from "./components/EditorBar/EditorBar";
 import Navbar from "./components/Navbar/Navbar";
 import Editor from "./components/Editor/Editor";
 
+import ReduxStore from "./redux/";
+
 const App = (): React$Element<"div"> => {
 	const [temp, setTemp] = React.useState(false);
 	const timerCount = 10000;
@@ -20,12 +22,14 @@ const App = (): React$Element<"div"> => {
 			{!temp ? (
 				<Temp setTemp={setTemp} timerCount={timerCount} />
 			) : (
-				<div className='App-container'>
-					<AppStatus />
-					<EditorBar />
-					<Navbar />
-					<Editor></Editor>
-				</div>
+				<ReduxStore>
+					<div className='App-container'>
+						<AppStatus />
+						<EditorBar />
+						<Navbar />
+						<Editor></Editor>
+					</div>
+				</ReduxStore>
 			)}
 		</div>
 	);

@@ -1,10 +1,11 @@
 //@flow
 import React, { useEffect, useState } from "react";
 import "./section.css";
+import { connect } from "react-redux";
 
 const Section = (props: {
 	visible: string,
-	children?: React$Node,
+	section: Array<React$Element<"div">>,
 }): React$Element<"div"> => {
 	const [visible, setVisible] = useState(props.visible);
 
@@ -14,13 +15,13 @@ const Section = (props: {
 
 	return (
 		<div className={`section ${visible} bg-nord2 txt-light`}>
-			{props.children}
+			{props.section.map((el, id) => el)}
 		</div>
 	);
 };
 
-Section.defaultProps = {
-	children: (<div>Section is coming</div>: React$Element<"div">),
+const mapDispatchToProps = (state) => {
+	return { section: state.section };
 };
 
-export default Section;
+export default connect(mapDispatchToProps)(Section);
