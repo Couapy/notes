@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 import "./section.css";
 import { connect } from "react-redux";
 
-const Section = (props: {
+type TArrayReactDiv = React$Element<"div">;
+type TState = {| section: Array<TArrayReactDiv> |};
+type TProps = {|
 	visible: string,
-	section: Array<React$Element<"div">>,
-}): React$Element<"div"> => {
+	section: { sectionComponent: Array<TArrayReactDiv> },
+|};
+
+const Sections = (props: TProps): TArrayReactDiv => {
 	const [visible, setVisible] = useState(props.visible);
 
 	useEffect(() => {
@@ -14,14 +18,16 @@ const Section = (props: {
 	}, [props.visible]);
 
 	return (
-		<div className={`section ${visible} bg-nord2 txt-light`}>
-			{props.section.map((el, id) => el)}
+		<div className={`section ${visible} pt10 bg-nord2 txt-light`}>
+			{props.section.sectionComponent.map((el, id) => el)}
 		</div>
 	);
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (state: TState) => {
 	return { section: state.section };
 };
 
-export default connect(mapDispatchToProps)(Section);
+// flowlint-next-line unclear-type:off
+const SectionRedux: any = connect(mapDispatchToProps)(Sections);
+export default SectionRedux;

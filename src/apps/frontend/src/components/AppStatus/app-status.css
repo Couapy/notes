@@ -1,3 +1,7 @@
 .app-status {
 	grid-area: app-status;
 }
+
+.section:hover {
+	background-color: var(--color-nord10);
+}

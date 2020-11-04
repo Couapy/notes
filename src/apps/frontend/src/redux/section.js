@@ -1,27 +1,39 @@
 //@flow
-export const SET_SECTION_COMPONENT = "SET_SECTION_COMPONENT";
+import { SET_SECTION_COMPONENT, RESET_SECTION_COMPONENT } from "./_actionTypes";
 
-export const initialStateSection: Array<React$Element<"div">> = [
-	<div key='default'>OK</div>,
-];
+import type { TArrayReactDiv, TSetSectionComponent } from "./_flowTypes";
+type TState = {
+	open: boolean,
+	section: String | null,
+	sectionComponent: Array<React$Element<"div">>,
+	...
+};
+export const initialStateSection: TState = {
+	open: false,
+	section: null,
+	sectionComponent: [<div key='initialSection' />],
+};
 
-export const setSectionComponent = (
-	sectionComponent: Array<React$Element<"div">>
-): { sectionComponent: Array<React$Element<"div">>, type: string, ... } => ({
-	type: SET_SECTION_COMPONENT,
-	sectionComponent,
-});
-
-const section = (
-	state: Array<React$Element<"div">> = initialStateSection,
-	action: { type: string, sectionComponent: Array<React$Element<"div">> }
-): Array<React$Element<"div">> => {
+const reducer = (
+	state: TState = initialStateSection,
+	action: TSetSectionComponent
+): TState => {
 	switch (action.type) {
 		case SET_SECTION_COMPONENT:
-			return [...action.sectionComponent];
+			return {
+				...state,
+				open: action.payload.open,
+				section: action.payload.section,
+				sectionComponent: [...action.payload.sectionComponent],
+			};
+		case RESET_SECTION_COMPONENT:
+			return {
+				...state,
+				sectionComponent: [...initialStateSection.sectionComponent],
+			};
 		default:
 			return state;
 	}
 };
 
-export default section;
+export default reducer;

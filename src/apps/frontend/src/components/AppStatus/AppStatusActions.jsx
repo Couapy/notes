@@ -1,43 +1,61 @@
 //@flow
-import * as React from "react";
+import React from "react";
 import { ReactComponent as UpdateLogo } from "../../svg/update.svg";
 import { ReactComponent as SettingsLogo } from "../../svg/settings.svg";
 import { connect } from "react-redux";
-import { setSectionComponent } from "../../redux/section";
+import {
+	setSectionComponent,
+	resetSectionComponent,
+} from "../../redux/_actions";
+import { initialStateSection } from "../../redux/section";
+import { sectionAppStatusActions } from "./section";
 
-const AppStatusActions = ({ setSectionComponent }): React.Element<"span"> => {
+let timer = null;
+
+const AppStatusActions = ({
+	setSectionComponent,
+	resetSectionComponent,
+	section,
+}): React$Element<"span"> => {
+	const handleClick = (e) => {
+		const sectionName = e.target.sectionName;
+		const reset = section === sectionName ? 1 : 0;
+		setSectionComponent({
+			open: !reset,
+			section: [sectionName, initialStateSection.section][reset],
+			sectionComponent: sectionAppStatusActions[sectionName],
+		});
+		if (!!timer) clearTimeout(timer);
+		if (!!reset) timer = setTimeout(() => resetSectionComponent(), 1000);
+	};
+
 	return (
 		<span className='flex-center flex-jc-sb mr0 width66'>
 			<UpdateLogo className='svg-24 svg-light cursor-pointer' />
 			<SettingsLogo
-				onClick={() => setSectionComponent(sectionAppStatusActions)}
+				onClick={(e) => {
+					e.target.sectionName = "settings";
+					handleClick(e);
+				}}
 				className='svg-24 svg-light cursor-pointer'
 			/>
 		</span>
 	);
 };
 
-// export default AppStatusActions;
-
-class section {
-	txt: string;
-	constructor(txt: string) {
-		this.txt = txt;
-	}
-}
-
-const account: section = new section("Account");
-const profile: section = new section("Profile");
-const socialNetworks: section = new section("Social Networks");
-
-const sectionAppStatusActions: Array<React$Element<"div">> = [
-	account,
-	profile,
-	socialNetworks,
-].map((e, i) => <div key={i.toString()}>{e.txt}</div>);
+const mapStateToProps = (props) => {
+	const section = props.section.section;
+	return { section };
+};
 
 const actionCreators = {
 	setSectionComponent,
+	resetSectionComponent,
 };
 
-export default connect(null, actionCreators)(AppStatusActions);
+// flowlint-next-line unclear-type:off
+const AppStatusActionsRedux: any = connect(
+	mapStateToProps,
+	actionCreators
+)(AppStatusActions);
+export default AppStatusActionsRedux;

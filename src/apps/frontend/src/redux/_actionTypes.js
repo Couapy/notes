@@ -1,0 +1,4 @@
+//@flow
+
+export const SET_SECTION_COMPONENT: string = "SET_SECTION_COMPONENT";
+export const RESET_SECTION_COMPONENT: string = "RESET_SECTION_COMPONENT";

@@ -50,6 +50,15 @@ $targets-colors: (
 				opacity: if($target == "svg", 0.75 !important, null);
 				transform: if($target == "svg", scale(1.1), null);
 			}
+			&:active {
+				opacity: if($target == "svg", 1 !important, null);
+				fill: if(
+					$target == "svg",
+					#{map.get($theme-colors, "info")} !important,
+					null
+				);
+				transform: if($target == "svg", scale(0.9), null);
+			}
 		}
 	}
 }

@@ -21,5 +21,5 @@ const store = createStore(
 
 export default (props: {
 	children: React$Element<"div">,
-	store?: any,
+	store?: [],
 }): React$Node => <Provider store={store} {...props} />;

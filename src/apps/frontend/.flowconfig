@@ -15,9 +15,11 @@
 [libs]
 <PROJECT_ROOT>/flow-typed
 [lints]
+#all=off # default
 all=warn
 
 [options]
+#module.name_mapper='^\([^\.].*\)$' -> '<PROJECT_ROOT>/src/\1' // For absolute import
 emoji=true
 include_warnings=true
 module.file_ext=.js

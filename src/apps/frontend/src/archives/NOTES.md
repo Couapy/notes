@@ -22,6 +22,7 @@
 
 [Why use static types in JavaScript?](https://medium.com/free-code-camp/why-use-static-types-in-javascript-part-1-8382da1e0adb)  
 [Flow types checking in React](https://flow.org/en/docs/react/)  
+[Flow-typed repo](https://github.com/flow-typed/flow-typed/wiki/CLI-Commands-and-Flags#install)  
 [Static Type Checking from reactjs.org](https://reactjs.org/docs/static-type-checking.html)  
 [Typing React Components with Flow](https://datarockets.com/blog/react-components-flow-tutorial/)  
 [Flow error `cannot resolve module`](https://stackoverflow.com/questions/51563112/flow-throws-error-cannot-resolve-module-react-redux-even-tho-its-installed#51793867): `yarn flow-typed install --overwrite`
@@ -71,3 +72,7 @@
 ### Code snippets
 
 [W3Schools How To](https://www.w3schools.com/howto/default.asp)
+
+### React
+
+[Top 10 React Hook libraries](https://www.bornfight.com/blog/top-10-react-hook-libraries/)
