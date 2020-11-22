@@ -13,7 +13,10 @@ class Profile(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    bio = models.TextField(max_length=500, blank=True)
+    bio = models.TextField(
+        max_length=500,
+        blank=True
+    )
     image = models.ImageField(
         upload_to=profile_directory_path,
         blank=True,
