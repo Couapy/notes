@@ -19,7 +19,9 @@
 all=warn
 
 [options]
-#module.name_mapper='^\([^\.].*\)$' -> '<PROJECT_ROOT>/src/\1' // For absolute import
+module.name_mapper='^src\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='.*\(.css\)' -> 'CSSModule'
+module.system=haste
 emoji=true
 include_warnings=true
 module.file_ext=.js
