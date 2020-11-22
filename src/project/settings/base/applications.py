@@ -1,6 +1,3 @@
-import os
-from .constants import BASE_DIR
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -9,7 +6,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Dependencies
-    'social_django',
     'rest_framework',
     # Project applications
     'core',
