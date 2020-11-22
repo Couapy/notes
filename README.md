@@ -1,14 +1,17 @@
 # notes
 
 ![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Release](https://badgen.net/github/release/Couapy/notes/)
+![Release](https://badgen.net/github/last-commit/Couapy/notes/)
+![Django CI](https://github.com/Couapy/notes/workflows/Django%20CI/badge.svg)
 
 ## Project status
 
 * [x] Specification
-* [] Technical analysis
-* [] Development
-* [] Final unit tests
-* [] Deployment
+* [ ] Technical analysis
+* [ ] Development
+* [ ] Final unit tests
+* [ ] Deployment
 
 ## Overview
 
