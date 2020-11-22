@@ -22,7 +22,7 @@ install:
 	@echo "Installation finished."
 
 update:
-	@git pull
+	@.venv/bin/pip install -r requirements.txt
 	@.venv/bin/python src/manage.py migrate
 
 run:

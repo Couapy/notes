@@ -17,9 +17,6 @@ class Note(models.Model):
         auto_now_add=True
     )
 
-    class Meta:
-        abstract = True
-
 
 class ListNote(Note):
     items = models.ManyToManyField(
