@@ -1,7 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 
 class NoteSpace(models.Model):
@@ -14,7 +12,6 @@ class NoteSpace(models.Model):
     )
 
 
-
 class NoteBook(models.Model):
     title = models.CharField(
         max_length=128
@@ -25,4 +22,3 @@ class NoteBook(models.Model):
     notes = models.ManyToManyField(
         to="Note"
     )
-

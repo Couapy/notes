@@ -10,6 +10,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Dependencies
     'social_django',
+    'rest_framework',
     # Project applications
     'core',
 ]
