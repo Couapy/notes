@@ -55,7 +55,7 @@ So there are two last spaces :
 * Archives
 
 ## Second version
-https://github.com/taniarascia/takenote
+
 This is a list of propositions of features for the second version of the application :
 
 * progressive web app
