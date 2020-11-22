@@ -1,9 +1,8 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from core.models.user import Profile
+from core.models.user import User, Profile
 from core.models.notes import ListItem, ListNote, Note, TextNote
-from core.models.spaces import NoteBook, NoteSpace
+from core.models.spaces import NoteSpace, NoteBook
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,6 +15,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             "last_name",
             "email",
             "profile",
+            "notespace",
             "is_superuser",
             "is_staff",
             "date_joined",
@@ -81,6 +81,11 @@ class NoteSpaceSerializer(serializers.HyperlinkedModelSerializer):
             "url",
             "user",
             "notes",
+            "notebooks",
+            "archive_notes",
+            "archive_notebook",
+            "trash_notes",
+            "trash_notebook",
         ]
 
 

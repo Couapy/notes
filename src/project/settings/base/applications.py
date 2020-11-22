@@ -7,6 +7,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Dependencies
     'rest_framework',
+    'oauth2_provider',
     # Project applications
     'core',
 ]

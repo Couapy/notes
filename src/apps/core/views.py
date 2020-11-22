@@ -1,8 +1,7 @@
-from django.contrib.auth.models import User
 from django.shortcuts import render
 from rest_framework import permissions, viewsets
 
-from core.models.user import Profile
+from core.models.user import User, Profile
 from core.serializers import (
     ListItemSerializer,
     ListNoteSerializer,
@@ -47,31 +46,40 @@ class CurrentProfileViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class NoteSerializerViewSet(viewsets.ModelViewSet):
+class NoteViewSet(viewsets.ModelViewSet):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class ListNoteSerializerViewSet(viewsets.ModelViewSet):
+class ListNoteViewSet(viewsets.ModelViewSet):
     queryset = ListNote.objects.all()
     serializer_class = ListNoteSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class ListItemSerializerViewSet(viewsets.ModelViewSet):
+class ListItemViewSet(viewsets.ModelViewSet):
     queryset = ListItem.objects.all()
     serializer_class = ListItemSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class NoteSpaceSerializerViewSet(viewsets.ModelViewSet):
-    queryset = NoteSpace.objects.all()
+class CurrentNoteSpaceViewSet(viewsets.ModelViewSet):
+    """
+    Give the note space of the current user.
+    """
     serializer_class = NoteSpaceSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+    def get_queryset(self):
+        return NoteSpace.objects.filter(user=self.request.user)
 
-class NoteBookSerializerViewSet(viewsets.ModelViewSet):
+    def list(self, request, *args, **kwargs):
+        serializer = self.get_serializer(request.user.notespace)
+        return Response(serializer.data)
+
+
+class NoteBookViewSet(viewsets.ModelViewSet):
     queryset = NoteBook.objects.all()
     serializer_class = NoteBookSerializer
     permission_classes = (permissions.IsAuthenticated,)
