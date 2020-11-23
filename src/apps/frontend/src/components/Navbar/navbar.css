@@ -1,16 +1,31 @@
 .navbar {
 	height: calc(100vh - var(--var-height-bar));
 	grid-area: navbar;
-	display: grid;
-	grid-template-areas: "main-navbar section";
 	overflow: hidden;
+	position: relative;
+}
+
+.navbar > div {
 	transition: 1.5s;
 }
 
-.navbar.section-closed {
-	grid-template-columns: 100% 0;
+.navbar.section-closed .main-navbar {
+	width: 100%;
 }
 
-.navbar.section-open {
-	grid-template-columns: 50% 50%;
+.navbar > .sections {
+	position: relative;
+	top: -100%;
+}
+
+.navbar.section-closed > .sections {
+	width: 0;
+	left: 100%;
+}
+
+.navbar.section-open > div {
+	width: 50%;
+}
+.navbar.section-open > .sections {
+	left: 50%;
 }

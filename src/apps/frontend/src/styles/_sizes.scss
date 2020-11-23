@@ -38,6 +38,9 @@ $cardinals: (
 	.height#{$i} {
 		height: #{$value};
 	}
+	.min-height#{$i} {
+		min-height: #{$value};
+	}
 	.fs#{$i} {
 		font-size: #{$value};
 	}

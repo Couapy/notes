@@ -1,14 +1,13 @@
 .section {
-	grid-area: section;
 	width: calc(var(--var-width-bar) / 2);
 }
 
-.section.closed {
+.sections.closed > * {
 	opacity: 0;
 	transition: 0.8s opacity linear 0s;
 }
 
-.section.open {
+.sections.open > * {
 	opacity: 1;
 	transition: 1.2s opacity linear 0.1s;
 }

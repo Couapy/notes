@@ -18,7 +18,7 @@ const Sections = (props: TProps): TArrayReactDiv => {
 	}, [props.visible]);
 
 	return (
-		<div className={`section ${visible} pt10 bg-nord2 txt-light`}>
+		<div className={`sections ${visible} pt10 bg-nord2 txt-light`}>
 			{props.section.sectionComponent.map((el, id) => el)}
 		</div>
 	);

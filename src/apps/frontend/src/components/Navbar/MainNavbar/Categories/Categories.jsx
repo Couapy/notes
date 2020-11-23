@@ -12,7 +12,7 @@ const Category = (): Array<React$Element<"div">> =>
 		const ComponentChildren = item.componentChildren;
 		return (
 			<div className='category' key={item.txt.concat(id.toString())}>
-				<div className='flex-center flex-jc-sb height50 pr40 pl40 fs22 font-weight-6'>
+				<div className='flex-center flex-jc-sb min-height50 pr40 pl40 fs22 font-weight-6'>
 					<span>{item.txt}</span>
 					<ComponentLogo className='ico svg-20 svg-light cursor-pointer' />
 				</div>
