@@ -13,7 +13,7 @@ install:
 	@mkdir -p src/apps
 	@mkdir -p var
 
-	@.venv/bin/python src/manage.py collectstatic
+	@.venv/bin/python src/manage.py collectstatic --clear --force-color --noinput
 	@echo "Static files are collected."
 
 	@.venv/bin/python src/manage.py migrate
