@@ -1,9 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class NoteSpace(models.Model):
     user = models.OneToOneField(
-        to="User",
+        to=User,
         on_delete=models.CASCADE,
     )
     notes = models.ManyToManyField(
