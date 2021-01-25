@@ -8,8 +8,8 @@
 ## Project status
 
 * [x] Specification
-* [ ] Technical analysis
-* [ ] Development
+* [x] Technical analysis
+* [x] Development
 * [ ] Final unit tests
 * [ ] Deployment
 

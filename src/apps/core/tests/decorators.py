@@ -4,7 +4,6 @@ from core.decorators import login_required
 from django.contrib.auth.models import AnonymousUser, User
 from django.http import JsonResponse
 from django.test import RequestFactory, TestCase
-from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
 

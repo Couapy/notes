@@ -29,7 +29,7 @@ run:
 	@.venv/bin/python src/manage.py runserver
 
 test:
-	@.venv/bin/python src/manage.py test
+	@.venv/bin/python src/manage.py test src/apps
 
 migrations:
 	@.venv/bin/python src/manage.py makemigrations
