@@ -1,88 +1,125 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from rest_framework import permissions, viewsets
+from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView
+from rest_framework.renderers import JSONRenderer
 
-from core.models.user import User, Profile
-from core.serializers import (
-    ListItemSerializer,
-    ListNoteSerializer,
-    NoteBookSerializer,
-    NoteSerializer,
-    NoteSpaceSerializer,
-    ProfileSerializer,
-    UserSerializer
-)
-from rest_framework.response import Response
+from core.decorators import login_required
 from core.models.notes import ListItem, ListNote, Note
 from core.models.spaces import NoteBook, NoteSpace
+from core.models.user import Profile
+from core.serializers import (ListItemSerializer, ListNoteSerializer,
+                              NoteBookSerializer, NoteSerializer,
+                              NoteSpaceSerializer, ProfileSerializer,
+                              UserSerializer)
 
 
-class CurrentUserViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    Give the current user.
-    """
-    serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class UserView(TemplateView):
 
-    def get_queryset(self):
-        return User.objects.filter(pk=self.request.user.pk)
+    @login_required
+    def get(self, request):
+        serializer = UserSerializer(request.user, context={'request': request})
+        return HttpResponse(JSONRenderer().render(serializer.data))
 
-    def list(self, request, *args, **kwargs):
-        serializer = self.get_serializer(request.user)
-        return Response(serializer.data)
+    @login_required
+    def put(self, request):
+        return HttpResponse("TODO")
 
+    def post(self, request):
+        return HttpResponse("TODO")
 
-class CurrentProfileViewSet(viewsets.ModelViewSet):
-    """
-    Give the profile of the current user.
-    """
-    serializer_class = ProfileSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def get_queryset(self):
-        return Profile.objects.filter(user=self.request.user)
-
-    def list(self, request, *args, **kwargs):
-        serializer = self.get_serializer(request.user.profile)
-        return Response(serializer.data)
+    @login_required
+    def delete(self, request):
+        return HttpResponse("TODO")
 
 
-class NoteViewSet(viewsets.ModelViewSet):
-    queryset = Note.objects.all()
-    serializer_class = NoteSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class ProfileView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def put(self, request):
+        return HttpResponse("TODO")
 
 
-class ListNoteViewSet(viewsets.ModelViewSet):
-    queryset = ListNote.objects.all()
-    serializer_class = ListNoteSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class NoteSpaceView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
 
 
-class ListItemViewSet(viewsets.ModelViewSet):
-    queryset = ListItem.objects.all()
-    serializer_class = ListItemSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class NoteBooksView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def post(self, request):
+        return HttpResponse("TODO")
 
 
-class CurrentNoteSpaceViewSet(viewsets.ModelViewSet):
-    """
-    Give the note space of the current user.
-    """
-    serializer_class = NoteSpaceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class NoteBooksDetailView(TemplateView):
+    def get(self, request, id_note_book):
+        return HttpResponse("TODO")
 
-    def get_queryset(self):
-        return NoteSpace.objects.filter(user=self.request.user)
+    def put(self, request, id_note_book):
+        return HttpResponse("TODO")
 
-    def list(self, request, *args, **kwargs):
-        serializer = self.get_serializer(request.user.notespace)
-        return Response(serializer.data)
+    def delete(self, request, id_note_book):
+        return HttpResponse("TODO")
 
 
-class NoteBookViewSet(viewsets.ModelViewSet):
-    queryset = NoteBook.objects.all()
-    serializer_class = NoteBookSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class ListNotesView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def post(self, request):
+        return HttpResponse("TODO")
+
+
+class ListNotesDetailView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def put(self, request):
+        return HttpResponse("TODO")
+
+    def delete(self, request):
+        return HttpResponse("TODO")
+
+
+class ListNotesItemsView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def post(self, request):
+        return HttpResponse("TODO")
+
+
+class ListNotesItemsDetailView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def put(self, request):
+        return HttpResponse("TODO")
+
+    def delete(self, request):
+        return HttpResponse("TODO")
+
+
+class NotesView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def post(self, request):
+        return HttpResponse("TODO")
+
+
+class NotesDetailView(TemplateView):
+    def get(self, request):
+        return HttpResponse("TODO")
+
+    def put(self, request):
+        return HttpResponse("TODO")
+
+    def delete(self, request):
+        return HttpResponse("TODO")
 
 
 def index(request):

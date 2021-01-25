@@ -1,8 +1,9 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from core.models.user import User, Profile
 from core.models.notes import ListItem, ListNote, Note, TextNote
-from core.models.spaces import NoteSpace, NoteBook
+from core.models.spaces import NoteBook, NoteSpace
+from core.models.user import Profile
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
